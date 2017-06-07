@@ -1,0 +1,19 @@
+{
+  "name": "html-video",
+  "version": "1.0.0",
+  "description": "Stream mobile camera in web page",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiqueDaSneak/html-video.git"
+  },
+  "author": "niquedasneak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NiqueDaSneak/html-video/issues"
+  },
+  "homepage": "https://github.com/NiqueDaSneak/html-video#readme"
+}
