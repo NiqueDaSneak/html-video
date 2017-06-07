@@ -2,6 +2,9 @@ doctype html
 html
   head
     meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    meta(name='theme-color', content='#C9BA49')
     title Test Stream
   body
     video#video(width='640', height='480', autoplay='')
@@ -9,12 +12,14 @@ html
     canvas#canvas(width='640', height='480')
   script(type='text/javascript').
     // Grab elements, create settings, etc.
-    var video = document.getElementById('video');
-    // Get access to the camera!
-    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // Not adding `{ audio: true }` since we only want video now
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-    video.src = window.URL.createObjectURL(stream);
-    video.play();
-    });
-    }
+    $(document).ready(() => {
+      var video = document.getElementById('video');
+      // Get access to the camera!
+      if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        // Not adding `{ audio: true }` since we only want video now
+        navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+          video.src = window.URL.createObjectURL(stream);
+          video.play();
+        });
+      }
+    })
