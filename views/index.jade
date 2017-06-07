@@ -7,8 +7,8 @@ html
     meta(name='theme-color', content='#C9BA49')
     title Test Stream
   body
-    video#video(width='640', height='480', autoplay='')
-    button#snap Snap Photo
+    video#video(width='640', height='480', autoplay)
+    button#snap Start
     canvas#canvas(width='640', height='480')
   script(type='text/javascript').
     // Grab elements, create settings, etc.
@@ -19,7 +19,9 @@ html
         // Not adding `{ audio: true }` since we only want video now
         navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
           video.src = window.URL.createObjectURL(stream);
-          video.play();
-        });
+        })
       }
+      $('#snap').click(() => {
+        video.play()
+      })
     })
