@@ -6,7 +6,7 @@ var app = express()
 app.set('views', __dirname + '/views');
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index.html')
 })
 
 var port = process.env.PORT || 3000;
